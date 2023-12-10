@@ -43,29 +43,62 @@ exports.getIndex = async  (req, res, next) => {
 
   exports.getCoursePlay = async (req, res, next) => {
 
-    const user = req.session.user._id;
-    
     const courseId = req.params.courseId
 
-    // const userDetail =  await User.findById(user).populate('courses.course');
+    // code related to add a course to user
+    const userId = req.session.user._id;
+    const user =  await User.findById(userId);
+    const courses = user.courses;
+   
+    let isEnrolled = false;
+    courses.forEach( (course) => {
+       isEnrolled = course.course.equals(courseId);
+    })
 
+    console.log(isEnrolled);
     const course = await Course.findById(courseId).populate('content.lectures.lecture');
 
     const lectures = course.content.lectures;
+// if course is enrolled
+    if(isEnrolled) {
+      if(lectures.length>0) {
+        const lecture = lectures[0].lecture;
+      res.render('shop/courseplayview',{ 
+        lecture: lecture,
+        lectures :lectures,
+        path:'/',
+        isAuthenticated:req.session.isLoggedIn
+      })
+    }else {
+      res.render('shop/404', {
+        path:'/'
+      });
+    }
+    }
+    // if course is not enrooled
+    else {
+      if(req.session.isLoggedIn) {
+        user.addNewCourse(courseId);
+      }
+      if(lectures.length>0) {
+        const lecture = lectures[0].lecture;
+      res.render('shop/courseplayview',{ 
+        lecture: lecture,
+        lectures :lectures,
+        path:'/',
+        isAuthenticated:req.session.isLoggedIn
+      })
+    }else {
+      res.render('shop/404', {
+        path:'/'
+      });
+    }
+
+    }
+// code related to diplaying course s
+
     // console.log(userDetail.courses)
-    if(lectures.length>0) {
-      const lecture = lectures[0].lecture;
-    res.render('shop/courseplayview',{ 
-      lecture: lecture,
-      lectures :lectures,
-      path:'/',
-      isAuthenticated:req.session.isLoggedIn
-    })
-  }else {
-    res.render('shop/404', {
-      path:'/'
-    });
-  }
+  
 }
 
 // Get Teachers
@@ -159,11 +192,13 @@ exports.getIndex = async  (req, res, next) => {
   }
 
   exports.getMyProfile = async (req,res,next) => {
-    console.log(req.session.user);
-    // const user = User.find({_id:userId});
-    // console.log(user);
+    const userId = req.session.user._id;
+    const user =  await User.findById(userId).populate('courses.course');
+    const courses = user.courses
+    // console.log(user.courses);
     res.render('shop/myprofileview', {
       path : 'myprofile',
-      isAuthenticated:req.session.isLoggedIn
+      isAuthenticated:req.session.isLoggedIn,
+      courses:courses
     })
   }

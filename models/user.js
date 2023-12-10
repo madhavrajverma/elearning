@@ -23,7 +23,19 @@ const userSchema = new Schema({
   ]
 })
 
+userSchema.methods.addNewCourse = function(courseId) {
+  const updatedCourse = [...this.courses];
+  updatedCourse.push( {
+    course:courseId
+  })
+  this.courses = updatedCourse;
+  return this.save(); 
+};
 
+userSchema.methods.clearCourses = function() {
+  this.courses =  [];
+  return this.save();
+};
 
 module.exports = mongoose.model('User', userSchema);
 
