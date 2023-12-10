@@ -10,6 +10,9 @@ const Blog = require('../models/blog.js');
 const Query = require('../models/query.js'); 
 
 const sgMail = require('@sendgrid/mail');
+const { exit } = require('process');
+
+const stripe =  require('stripe')('sk_test_51Jk2ANSDbuVWzIBe3X86ar9WBFkeoXylJ5f9KQF8irErXYwctAvrFAu0TKDMFVOPy35iQ5TRJXEuzbK4CVW09OuJ00P2GZV6NK')
 
 
 
@@ -49,15 +52,15 @@ exports.getIndex = async  (req, res, next) => {
     const userId = req.session.user._id;
     const user =  await User.findById(userId);
     const courses = user.courses;
-   
-    let isEnrolled = false;
-    courses.forEach( (course) => {
-       isEnrolled = course.course.equals(courseId);
-    })
+    
+    const isEnrolled = courses.find ( (course) => {
+      return course.course.toString() === courseId.toString();
+  })
+
 
     console.log(isEnrolled);
-    const course = await Course.findById(courseId).populate('content.lectures.lecture');
 
+    const course = await Course.findById(courseId).populate('content.lectures.lecture');
     const lectures = course.content.lectures;
 // if course is enrolled
     if(isEnrolled) {
@@ -111,12 +114,51 @@ exports.getIndex = async  (req, res, next) => {
 
 
   exports.getCourseDetail = async (req, res, next) => {
+  
     const courseId = req.params.courseId
     const course = await Course.findById(courseId);
+
+    const userId = req.session.user._id;
+    const user =  await User.findById(userId);
+    const courses = user.courses;
+
+    
+    
+  const isEnrolled = courses.find ( (course) => {
+        return course.course.toString() === courseId.toString();
+    })
+
+    console.log(isEnrolled)
+
+    // code for stripe session
+  const product = await stripe.products.create({
+      name: course.name,
+    });
+
+    const price = await stripe.prices.create({
+      product: product.id,
+      unit_amount: 200,
+      currency: 'inr',
+    });
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price: price.id,
+          quantity: 1,
+        }
+      ],
+      mode: 'payment',
+      success_url: `http://localhost:3000/coursePlay/${courseId}`,
+      cancel_url:  req.protocol + '://' + req.get('host')  + '/'
+    })
+
+
     res.render('shop/courseview', {
       course:course, 
       path:'/',
-      isAuthenticated:req.session.isLoggedIn
+      isAuthenticated:req.session.isLoggedIn,
+      sessionId:session.id,
+      isEnrolled:isEnrolled
     })
   }
 

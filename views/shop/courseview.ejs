@@ -40,14 +40,25 @@
             </div>
             <div class = "line"></div>
             <div class="course-enroll-now-btn-contianer course-view-right-container-div">
-               <% if(isAuthenticated) { %>
-                <a class = "enroll-now-btn" href="/coursePlay/<%= course._id %>">Enroll Now</a>
-                <% } else {%>
-                    <a class = "enroll-now-btn" href="/signup" %>">Enroll Now</a>
-                <% } %>
+               <% if(isAuthenticated && isEnrolled) { %>
+                <a class = "enroll-now-btn" href="/coursePlay/<%= course._id %>">Go to Course</a>
+                <% } else if(isAuthenticated) { %>
+                    <button id="enroll-btn" class = "enroll-now-btn">Enroll Now</button>
+                <% } else { %>
+                  <a class = "enroll-now-btn" href="/signup">Enroll Now</a>
+                <% }  %>
             </div>
     </div>
 </div>
 
-
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    const stripe = Stripe("pk_test_51Jk2ANSDbuVWzIBejFT3CEZtkQ99GY7BAGpbawSvjJoVMuo5r9F5R8wBnZvVivcSvM2dYIU79b77A88hM0vhV3yk00mICvcRYR");
+    const orderBtn = document.getElementById('enroll-btn');
+    orderBtn.addEventListener('click',function(){
+        stripe.redirectToCheckout({
+            sessionId: '<%= sessionId %>'
+        });
+    });
+</script>
 <%- include('../includes/footer.ejs') %>  
