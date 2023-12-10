@@ -1,0 +1,53 @@
+<%- include('../includes/head.ejs') %> 
+<%- include('../includes/navigation.ejs') %>
+
+<div class = "course-view-container">
+    <div class = "course-view-left-container">
+        <div class="course-detail-img">
+            <img src=<%= course.imageUrl %> alt="">
+        </div>
+        <h3 class="course-title"><%= course.name %></h3>
+        <div class = "course-detail-description">
+            <p>Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet</p>
+        </div>
+    </div>
+
+    <div class = "course-view-right-container">
+        <h2>Course Details</h2>
+            <div class = "price-container  course-view-right-container-div"> 
+                <h4>Price:</h4>
+                <h4>Free</h4>
+            </div>
+            <div class = "line"></div>
+            <div class="course-duration-container course-view-right-container-div">
+                <h4>Duration:</h4>
+                <h4>20 Hrs</h4>
+            </div>
+            <div class = "line"></div>
+            <div class="course-instructor-contianer course-view-right-container-div">
+                <h4>Instructors:</h4>
+                <h4>Madhav raj verma</h4>
+            </div>
+            <div class = "line"></div>
+            <div class="cource-rating-container course-view-right-container-div">
+                <h4>Rating:</h4>
+                <h4>4.5</h4>
+            </div>
+            <div class = "line"></div>
+            <div class="cource-language-container course-view-right-container-div">
+                <h4>Language:</h4>
+                <h4>English</h4>
+            </div>
+            <div class = "line"></div>
+            <div class="course-enroll-now-btn-contianer course-view-right-container-div">
+               <% if(isAuthenticated) { %>
+                <a class = "enroll-now-btn" href="/coursePlay/<%= course._id %>">Enroll Now</a>
+                <% } else {%>
+                    <a class = "enroll-now-btn" href="/signup" %>">Enroll Now</a>
+                <% } %>
+            </div>
+    </div>
+</div>
+
+
+<%- include('../includes/footer.ejs') %>  

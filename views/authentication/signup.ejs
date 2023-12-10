@@ -1,0 +1,41 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignUp</title>
+  <link rel="stylesheet" href="/css/authetication.css">
+  
+</head>
+<body>
+  <section class="container">
+    <div class="inside-container">
+      <div>
+        <img class="sign-up-img" src="img/signup.jpg" alt="">
+       </div>
+        <div class = "form-container">
+          <form action="/signup" id="query-form" method="POST">
+            <div class="data">
+               <label class = "email">Email</label>
+               <input type="email" name= "email"  data-validation-required-message="Please enter your email">
+            </div>
+            <div class="data">
+               <label class="password">Password</label>
+               <input  type="password" name="password" >
+            </div>
+            <div class="data">
+              <label class="confirmPassword">Confirm Password</label>
+              <input type="password" name="confirmPassword" >
+           </div>
+            <div class="btn">
+               <div class="inner"></div>
+               <button class="submit-btn" type="submit">SignUp</button>
+            </div>
+            <div class="signup-link">
+               Already a Member? <a href="/login">Login</a>
+            </div>
+         </form>
+        </div>
+    
+    </div>
+  </section>
+</body>

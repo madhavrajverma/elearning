@@ -1,0 +1,288 @@
+  <%- include('../includes/head.ejs') %>   
+  <%- include('../includes/navigation.ejs') %>
+
+   <section class = "section-2">
+    <h1 class = "feature-blog-title"> Featured Blogs</h1>
+     <div class = "featured-blog-container"> 
+      <div class="feature-blog">
+        <img class="feature-blog-img" src= <%= blog1.img %> alt="">
+         <div class="feature-blog-detail">
+          <h2 class="featuee-blog-title">
+            <%= blog1.name %>
+          </h2>
+          <p class="feature-blog-para">
+            <%= blog1.content %>          </p>
+          <div class="feature-blog-author-detail">
+            <img src="img/feature-author-img.png" alt="">
+             <p class="author-name">
+              Madhav Raj Verma
+             </p>
+          </div>
+         </div>
+      </div>
+      <div class="feature-blog-right-container">
+        <div class="feature-blog-right">
+          <img class="feature-blog-right-img" src=" <%= blog3.img %>" alt="">
+           <div class="feature-blog-right-detail">
+            <h2 class="feature-blog-right-title">
+              <%= blog2.name %>
+            </h2>
+            <div class="feature-blog-category-time">
+              <p>Productivity</p>
+              <p>3 days ago</p>
+            </div>
+            <div class="feature-blog-right-author-detail">
+              <img src="img/feature-author-img.png" alt="">
+               <p class="author-name">
+                Madhav Raj Verma
+               </p>
+            </div>
+           </div>
+        </div>
+        <div class="feature-blog-right">
+          <img class="feature-blog-right-img" src= <%= blog3.img %> alt="">
+           <div class="feature-blog-right-detail">
+            <h2 class="feature-blog-right-title">
+              <%= blog3.name %>
+            </h2>
+            <div class="feature-blog-category-time">
+              <p>Productivity</p>
+              <p>3 days ago</p>
+            </div>
+            <div class="feature-blog-right-author-detail">
+              <img src="img/feature-author-img.png" alt="">
+               <p class="author-name">
+                Madhav Raj Verma
+               </p>
+            </div>
+           </div>
+        </div>
+      </div>
+     </div>
+
+
+     <div class = "all-blogs-container">
+      <h2 class="all-blogs-main">All Blogs</h2>
+
+      
+
+      <div class="all-blogs">
+        <% for (let blog of allblogs ) { %> 
+        <div class="blog">
+          <img src=<%= blog.img %> alt="" class="blog-img">
+         <div class="blog-detail">
+          <div class="blog-category-time">
+            <p>Productivity</p>
+            <p>3 days ago</p>
+          </div>
+          <h3 class="blog-title">
+            <%= blog.name %>
+          </h3>
+          <div class="blog-footer">
+           <div class="blog-author-detail">
+             <img src="img/feature-author-img.png" alt="" class="blog-author">
+            <p class="blog-author-name">
+             Madhav raj verma
+            </p>
+           </div>
+           <div class="blog-read-more">
+             <p>Read More</p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <% } %>
+      </div> 
+      
+     </div>
+     
+
+
+     <div class="pagination-container">
+      <ul class="pagination">
+        <li class="page_btn">
+          <span class="material-symbols-outlined">
+            chevron_left
+            </span></li>
+       <li class="page-number active">1</li>
+       <li class="page-number">2</li>
+       <li class="page-number">3</li>
+       <li class="page-number">4</li>
+       <li class="page-number">5</li>
+       <li class="page-number">6</li>
+       <li class="page_btn">
+        <span class="material-symbols-outlined">
+          chevron_right
+          </span>
+      </li>
+      </ul>
+     </div>
+   </section>
+
+    <%- include('../includes/footer.ejs') %>  
+
+
+
+
+
+
+
+<!-- 
+            
+    <div class="blog">
+      <img src="img/featureBlogImg.png" alt="" class="blog-img">
+     <div class="blog-detail">
+      <div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="blog">
+      <img src="img/featureBlogImg.png" alt="" class="blog-img">
+     <div class="blog-detail">
+      <div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div>       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="blog">
+      <img src="img/featureBlogImg.png" alt="" class="blog-img">
+     <div class="blog-detail">
+      <div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="blog">
+      <img src="img/featureBlogImg.png" alt="" class="blog-img">
+     <div class="blog-detail">
+      <div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="blog">
+      <img src="img/featureBlogImg.png" alt="" class="blog-img">
+     <div class="blog-detail">
+      <div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="blog">
+      <img src="img/featureBlogImg.png" alt="" class="blog-img">
+     <div class="blog-detail">
+      <div class="blog-category-time">
+        <p>Productivity</p>
+        <p>3 days ago</p>
+      </div>
+      <h3 class="blog-title">
+       7 Skills of Highly Effective Programmers
+      </h3>
+      <div class="blog-footer">
+       <div class="blog-author-detail">
+         <img src="img/feature-author-img.png" alt="" class="blog-author">
+        <p class="blog-author-name">
+         Madhav raj verma
+        </p>
+       </div>
+       <div class="blog-read-more">
+         <p>Read More</p>
+       </div>
+      </div>
+     </div>
+    </div> -->

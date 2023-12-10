@@ -1,0 +1,31 @@
+ <!-- Navbar Start -->
+ <div class="container-fluid">
+    <div class="row border-top px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block" style="padding-top: 8px">
+            <a href="/" class="text-decoration-none">
+                <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+            </a>
+        </div>
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+             
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav py-0">
+                        <a href="/" class="<%= path === '/' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Home</a>
+                        <a href="/about" class="<%= path === '/about' ? 'active nav-item nav-link' : 'nav-item nav-link' %>" >About</a>
+                        <a href="/courses" class="<%= path === '/courses' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Courses</a>
+                        <a href="/teachers" class="<%= path === '/teachers' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Teachers</a>
+                        <a href="/blogs" class="<%= path === '/blogs' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Blog</a>
+                        <a href="/contact" class="<%= path === '/contact' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Contact</a>
+                    </div>
+                   <% if(!isAuthenticated) { %> 
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="/login">Join Now</a>
+                   <% }else { %>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="/myprofile">My Profile</a>
+                    <%  } %>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->

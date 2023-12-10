@@ -1,0 +1,36 @@
+<%- include('../includes/head.ejs') %> 
+<%- include('../includes/navigation.ejs') %>
+<body>
+    <div class="play-course-container">
+        <div class="video-player-container">
+            <div class="video-play">
+                <iframe width="100%" height="100%" id="video_id" src=<%= lecture.videourl %>
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+       
+            <div class="lecture-list">
+                <h1>Content List</h1>
+                <% var i = 0; %>
+                <% for (let lecture of lectures) { %>
+                <button onclick = 'hello("<%= lecture.lecture.videourl %>")' id = "myButton" class="lecture ">
+                     <h4><span><%= i %>.</span>  <%= lecture.lecture.name %></h4>
+                     <div><%= lecture.lecture.duration %></div>
+                    <div></div>
+                </button>
+               
+                <% i = i+1; %>
+                <% } %>
+            </div>
+         
+    </div>
+</body>
+<script>
+    function hello(videoUrl) {
+        var videoPlayer  =document.getElementById('video_id');
+        videoPlayer.src = videoUrl;
+    }
+</script>
+
+<%- include('../includes/footer.ejs') %>  
