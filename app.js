@@ -5,16 +5,19 @@ const bodyParser = require('body-parser');
 const connectDatabase = require('./db/dbconnect') 
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
+const mongoose = require('mongoose');
+
 
 // sendgrid confirguraion to send mails 
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey('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')
 
+const MONGODB_URI = 'mongodb+srv://rajmadhavverma175:madhavraj@cluster0.dobbykf.mongodb.net/elearning?retryWrites=true&w=majority'
 
 
 const app = express();
 const store = new MongoDBStore({
-          uri:"mongodb://127.0.0.1:27017/elearning",
+          uri: MONGODB_URI,
           collection:'session',
 })
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,7 +26,7 @@ app.use(bodyParser.json());
 
 
 
-connectDatabase();
+// connectDatabase();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 const shopRoutes = require('./routes/shop');
@@ -39,8 +42,11 @@ app.use(session({secret: 'my secret',resave : false,saveUninitialized:false,stor
 
 app.use(shopRoutes);
 
-app.listen(3000, () => {
-    console.log("Server started at port 3000");
-} 
-  
-);
+
+mongoose.connect(MONGODB_URI)
+  .then(result => {
+    app.listen(3000);
+  })
+  .catch(err => {
+    console.log(err);
+  });
