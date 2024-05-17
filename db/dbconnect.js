@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
  const connectDatabase = () => {
-  mongoose.connect('mongodb+srv://rajmadhavverma175:<madhavraj>@cluster0.dobbykf.mongodb.net/?retryWrites=true&w=majority').then((con) => {
+  mongoose.connect('mongodb+srv://rajmadhavverma175:<madhavraj>@cluster0.dobbykf.mongodb.net/elearning?retryWrites=true&w=majority').then((con) => {
     console.log(
       `MongoDB Database connected with HOST 27017`
     );
