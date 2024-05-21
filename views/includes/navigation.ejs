@@ -12,11 +12,16 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav py-0">
                         <a href="/" class="<%= path === '/' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Home</a>
-                        <a href="/about" class="<%= path === '/about' ? 'active nav-item nav-link' : 'nav-item nav-link' %>" >About</a>
                         <a href="/courses" class="<%= path === '/courses' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Courses</a>
                         <a href="/teachers" class="<%= path === '/teachers' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Teachers</a>
-                        <a href="/blogs" class="<%= path === '/blogs' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Blog</a>
-                        <a href="/contact" class="<%= path === '/contact' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Contact</a>
+                        <a href="/hiretutor" class="<%= path === '/hiretutor' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Hire Tutor</a>
+
+                       
+                     <a href="/blogs" class="<%= path === '/blogs' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Blog</a>
+                     <a href="/about" class="<%= path === '/about' ? 'active nav-item nav-link' : 'nav-item nav-link' %>" >About</a>
+
+                     <a href="/contact" class="<%= path === '/contact' ? 'active nav-item nav-link' : 'nav-item nav-link' %>">Contact</a>
+
                     </div>
                    <% if(!isAuthenticated) { %> 
                     <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="/login">Join Now</a>

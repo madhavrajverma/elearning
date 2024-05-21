@@ -1,6 +1,12 @@
   <%- include('../includes/head.ejs') %>   
   <%- include('../includes/navigation.ejs') %>
 
+<% if(isAuthenticated) {%>
+  <div class="createPostDiv">
+    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block createPostBtn" href="/createPost">Create New Post</a>
+  </div>
+<% } %>
+
    <section class = "section-2">
     <h1 class = "feature-blog-title"> Featured Blogs</h1>
      <div class = "featured-blog-container"> 
@@ -69,27 +75,29 @@
       <div class="all-blogs">
         <% for (let blog of allblogs ) { %> 
         <div class="blog">
-          <img src=<%= blog.img %> alt="" class="blog-img">
-         <div class="blog-detail">
-          <div class="blog-category-time">
-            <p>Productivity</p>
-            <p>3 days ago</p>
-          </div>
-          <h3 class="blog-title">
-            <%= blog.name %>
-          </h3>
-          <div class="blog-footer">
-           <div class="blog-author-detail">
-             <img src="img/feature-author-img.png" alt="" class="blog-author">
-            <p class="blog-author-name">
-             Madhav raj verma
-            </p>
+          <img src=<%= blog.image %> alt="" class="blog-img">
+        <a href="/blog/<%= blog._id %>">
+          <div class="blog-detail">
+            <div class="blog-category-time">
+              <p>Productivity</p>
+              <p>on <%= blog.datePosted.toDateString() %></p>
+            </div>
+            <h3 class="blog-title">
+              <%= blog.title %>
+            </h3>
+            <div class="blog-footer">
+             <div class="blog-author-detail">
+               <img src="img/feature-author-img.png" alt="" class="blog-author">
+              <p class="blog-author-name">
+               Madhav raj verma
+              </p>
+             </div>
+             <div class="blog-read-more">
+               <p>Read More</p>
+             </div>
+            </div>
            </div>
-           <div class="blog-read-more">
-             <p>Read More</p>
-           </div>
-          </div>
-         </div>
+        </a>
         </div>
         <% } %>
       </div> 

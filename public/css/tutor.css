@@ -1,0 +1,536 @@
+ *{
+        margin: 0px;
+        padding: 0px;
+    }
+    /* main div1 css start */
+    .main-div1{
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .div1-child1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap:0.5rem;
+        width: 40%;
+    }
+    .div1-child1 h1{
+        margin-top: 20px;
+        font-size: 40px;
+    }
+    .div1-child1 p{
+        font-size: 22px;
+        margin-top: 20px;
+    }
+    .div1-child2{
+        height: 400px;
+        width: 40%;
+    }
+
+    .action-btn {
+        display: flex;
+        flex-direction: row;
+        gap:1rem;
+    }
+
+    .imgdiv1-child2{
+        height: 400px;
+        width: 100%;
+    }
+    /* main div1 css end */
+
+    /* main div2 css start */
+    .main-div2{
+        height: 60vh;
+        background-color: rgb(236, 217, 149);
+        padding-top:10px;
+    }
+    .main-div2 h1{
+        padding-top: 2rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .div2-parent{
+        width:100%;
+        display: flex;
+        justify-content: center;
+    }
+    .div2-child1{
+        width: 30%;
+        text-align: center;
+    }
+    .div2-child1 p{
+        font-size:20px;
+        margin: 20px 10px;
+    }
+    .icon1{
+        font-size: 50px;
+        margin:30px 0px;
+        color: blue;
+    }
+    .icon2{
+        font-size: 50px;
+        margin:30px 0px;
+        color: red;
+    }
+    .icon3{
+        font-size: 50px;
+        margin:30px 0px;
+        color: blue;
+    }
+    /* main div2 css end */
+
+    /* main div3 css start */
+    .main-div3{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:2rem;
+        margin-top: 4rem;
+    }
+
+    .div3-parent1{
+        display: flex;
+        justify-content: center;
+        gap:2rem;
+    }
+    .div3-child1{
+        width:40%;
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+    }
+
+    .div3-child1 p{
+        font-size: 20px;
+    }
+
+    .div3-child1 a {
+    width: 40%;
+     }
+
+    .div3-child2{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        }
+
+    .div3-child2-box1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .subject-box{
+        display: flex;
+        flex-direction: column;
+        gap:8px;
+        width:50%;
+        padding: 35px;
+        border: 2px solid grey;
+    }
+    .subject-icon {
+        width:100%;
+        border:none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    /* .div3-child2-box1 div h4{
+        margin-top: 45px;
+        margin-left: 20px;
+    }
+    .div3-child2-box1 div p{
+        margin-left: 20px;
+    } */
+
+    .icon4{
+        font-size: 30px;
+        color: red;
+    }
+    .icon5{
+        font-size: 30px;
+        color: red;
+    }
+
+    .div3-parent2 {
+         width: 80%;
+    }
+
+    .parent2-div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap:2rem;
+    }
+
+    /* main div4 css start */
+    .main-div4{
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap:2rem;
+    }
+    .main-div4 div{
+        height: 400px;
+        width: 500px;
+    }
+    .main-div4 div h1{
+        margin-top: 100px;
+    }
+    .main-div4 div p{
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .main-div4 div input{
+        height: 35px;
+        width: 150px;
+        margin-top: 20px;
+        margin-left: 30px;
+        font-size: 16px;
+        font-family: cursive;
+        background-color: lime;
+        border-radius: 5px;
+    }
+    .BASimg{
+        height: 400px;
+        width: 500px;
+    }
+    /* main div4 css end*/
+
+    /* main div5 css start */
+    .main-div5
+    {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-div5 div{
+        height: 400px;
+        width: 500px;
+        border-radius: 2px solid black;
+    }
+    .main-div5 div img{
+        height: 350px;
+        width: 450px;
+        margin-top: 25px;
+    }
+    .main-div5 div h1{
+        margin-top: 35px;
+    }
+    .main-div5 div p{
+        margin-top: 10px;
+        font-size: 20px;
+    }
+    .main-div5 div input{
+        height: 35px;
+        width: 150px;
+        background-color: lime;
+        margin-top: 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: cursive;
+    }
+
+    .request-tutor-btn {
+        width: 40%;
+    }
+    /* main div5 css end */
+
+
+/* css for all tutors page */
+
+.top-subject-container{
+    margin:4rem;
+   display: flex;
+   flex-direction: column;
+   gap:2rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.top-subjects{
+   display: flex;
+  justify-content: center;
+   align-items: center;
+   gap: 20px;
+}
+
+
+.subject-box{
+display: flex;
+flex-direction: column;
+gap:8px;
+width:50%;
+padding: 35px;
+border: 2px solid grey;
+}
+.subject-icon {
+width:100%;
+border:none;
+display: flex;
+justify-content: flex-end;
+}
+
+.icon4{
+   font-size: 30px;
+   margin-top: 30px;
+   margin-left: 100px;
+   color: red;
+}
+.icon5{
+font-size: 30px;
+margin-top: 10px;
+margin-left: 100px;
+color: red;
+}
+
+/* top- tutors container */
+
+
+    /* main div2 css start*/
+    .top-tutors-container{
+        margin: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+        align-items: flex-start;
+    }
+    .tutors-container{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap:2rem;
+    }
+    .single-tutor{
+        padding:30px;
+        border: 2px solid gray;
+        display: flex;
+        margin-bottom: 5px;
+        gap:1rem;
+    }
+    .single-tutor-img-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+    }
+    .single-tutor-img-container img{
+        height: 200px;
+        width: 300px;
+        border-radius: 4px;
+    }
+    .single-tutor-detail-container{
+        display: flex;
+        flex-direction: column;
+        gap:0.5rem;
+    }
+    .single-tutor-detail-container h4{
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .single-tutor-detail-container p{
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .single-tutor-lesson-detail {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+    }
+
+    .single-tutor-lesson {
+        display: flex;
+        flex-direction:column;
+        gap:1rem;
+    }
+
+    .single-tutor-connect-btn {
+        display: flex;
+        flex-direction:column;
+        gap:1rem;
+    }
+
+
+
+
+    /* single-tutor-css */
+
+    .book-lesson-container {
+        margin:4rem;
+        display: flex;
+        flex-direction:column;
+        align-items: flex-start;
+        gap:2rem;
+    }
+
+
+    .lesson-title {
+        font-size:36px;
+        font-weight:700;
+    }
+
+
+
+    .tutor-detail-container {
+        display: flex;
+        gap: 3rem;
+        padding:20px;
+        align-items: center;
+        border: 2px solid grey;
+    }
+
+
+    .tutor-detail {
+        display:flex;
+        flex-direction: column;
+        gap:0.5rem;
+    }
+ 
+
+    .lesson-detail-container {
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+    }
+
+    .amount-container {
+        display: flex;
+        gap:1rem;
+        padding: 4px;
+        align-items: center;
+        justify-content: center;
+       border: 2px solid gray;
+       color: coral;
+    }
+    .amount-title {
+        font-size: 20px;
+    }
+
+
+
+    select::-ms-expand {
+        display: none;
+      }
+      select {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0.5em 2em 0.5em 0.5em;
+        border: 1px solid #eee;
+        font: inherit;
+        line-height: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+        background-position: right 15px top 1em, right 10px top 1em;
+        background-size: 5px 5px, 5px 5px;
+      }
+
+      .book-btn-container {
+        width:100%;
+        display:flex;
+        justify-content: center;
+      }
+
+
+    .completion-container {
+        margin:0px;
+        width:100%;
+        height:100vh;
+        background-color: #264653;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+
+    
+    .modal {
+        width:25rem;
+        height: 30rem;
+        background-color:white;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        display: flex;
+        flex-direction:column;
+        align-items:center;
+        border-radius:1rem;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,1);
+    }
+
+    .modal-top {
+        width:100%;
+        height:20rem;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+    }
+
+    .modal-icon {
+        width:6rem;
+        height:6rem;
+        position:absolute;
+        top:3px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+  .modal-icon i {
+    font-size: 2.5rem;
+    color:#fff;
+    }
+
+    .success-icon {
+        background-color: #2a9d8f;
+        box-shadow: 0 0.5rem 2rem rgba(42,157,143,0.3);
+    }
+
+    .modal-top h1 {
+        font-size:2.5rem;
+        color:#264653;
+    }
+
+    .modal-bottom {
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:  0 0 1rem 1rem;
+    }
+
+
+    .modal-bottom-success {
+        background-color:aquamarine;
+    }
+    .modal-btn {
+        width:10rem;
+        height:3rem;
+        border-radius:2rem;
+        border:none;
+        background-color:#fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        box-shadow: 0;
+        box-shadow:  0 1rem 2rem rgba(0, 0, 0blue, 1);
+        cursor: pointer;
+    }
+
+    

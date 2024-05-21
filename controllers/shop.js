@@ -8,6 +8,8 @@ const User = require('../models/user.js');
 const Content = require('../models/content.js'); 
 const Blog = require('../models/blog.js'); 
 const Query = require('../models/query.js'); 
+const BlogPost = require('../models/BlogPost.js')
+
 
 const sgMail = require('@sendgrid/mail');
 const { exit } = require('process');
@@ -164,31 +166,31 @@ exports.getIndex = async  (req, res, next) => {
 
 
   // Blog  Page Section 
-  exports.getBlogs = async (req, res, next) => {
+  // exports.getBlogs = async (req, res, next) => {
     
-    const blogs = await Blog.find();
+  //   const blogs = await Blog.find();
 
-    if(blogs.length>3) {
-      const blog1 = blogs[0];
-      const blog2 = blogs[1];
-      const blog3 = blogs[2];
-      const allblogs = blogs.slice(3, blogs.length);
+  //   if(blogs.length>3) {
+  //     const blog1 = blogs[0];
+  //     const blog2 = blogs[1];
+  //     const blog3 = blogs[2];
+  //     const allblogs = blogs.slice(3, blogs.length);
 
-      res.render('shop/blogs', {
-        blog1:blog1,
-        blog2:blog2,
-        blog3:blog3,
-        allblogs:allblogs,
-        path:'/blogs',
-        isAuthenticated:req.session.isLoggedIn
-      })
-    }else {
-      res.render('shop/index',{
-        isAuthenticated:req.session.isLoggedIn
-      });
-    }
+  //     res.render('shop/blogs', {
+  //       blog1:blog1,
+  //       blog2:blog2,
+  //       blog3:blog3,
+  //       allblogs:allblogs,
+  //       path:'/blogs',
+  //       isAuthenticated:req.session.isLoggedIn
+  //     })
+  //   }else {
+  //     res.render('shop/index',{
+  //       isAuthenticated:req.session.isLoggedIn
+  //     });
+  //   }
 
-  }
+  // }
 
 
 // Contcat Page Section
@@ -233,9 +235,15 @@ exports.getIndex = async  (req, res, next) => {
     // res.redirect('/contact')
   }
 
+
+
+
+
   exports.getMyProfile = async (req,res,next) => {
     const userId = req.session.user._id;
     const user =  await User.findById(userId).populate('courses.course');
+    const blogs = await BlogPost.find({userid : userId});
+    // console.log(blogs);
     const courses = user.courses
     // console.log(user.courses);
     res.render('shop/myprofileview', {

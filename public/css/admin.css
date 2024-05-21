@@ -1,0 +1,83 @@
+
+    /* main-div1 css start */
+    .amdin-main-div1{
+        height: 200px;
+        width: 100%;
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+    /* .main-div1 div{
+        height: 120px;
+        width: 230px;
+        border-radius: 10px;
+        border: 2px solid gray;
+    } */
+    .admin-div1-parent{
+        height: 120px;
+        width: 230px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        justify-content: space-around;
+        border: 2px solid gray;
+        border-radius: 10px;
+    }
+    .admin-div1-parent:nth-child(1), .admin-div1-parent:nth-child(3)
+    {
+        background-color: lightpink;
+    }
+    .admin-div1-parent:nth-child(2), .admin-div1-parent:nth-child(4)
+    {
+        background-color: lightblue;
+    }
+    .admin-div1-parent .child1{
+        height: 50px;
+        width: 50px;
+        color: blue;
+    }
+    .admin-div1-parent .child2{
+        height: 50px;
+        width: 150px;
+        text-align: center;
+    }
+    .icon1{
+        font-size: 35px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .admin-div1-parent p{
+        font-size: 14px;
+    }
+    /* .main-div1 div:nth-child{
+
+    } */
+    /* main-div2 css end */
+    
+    /* main-div3 css start */
+    .courses-anlaytic-container h3{
+        margin-left: 10%;
+    }
+        table {
+            width: 80%;
+            background-color: green;
+            border: 2px solid black;
+            margin-left: 10%;
+            border-collapse: collapse;
+        }
+        th{
+            height: 35px;
+            font-size: 20px;
+            background-color: orange;
+        }
+        tr,td{
+            border: 2px solid black;
+            height: 30px;
+        }
+        td{
+            padding-left: 170px;
+            font-size: 18px;
+            background-color: lightskyblue;
+        }

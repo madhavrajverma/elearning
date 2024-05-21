@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %>   
+<%- include('../includes/navigation.ejs') %>
+
+  <div class ="create-new-post-title">
+    <h1>Create a New Post</h1>
+  </div>
+        <div class="container"> 
+            <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+            <form action="/storeNewPost" method="POST" enctype="multipart/form-data">
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title"
+            id="title" name="title" >
+            </div> </div>
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+            <label>Description</label>
+            <textarea id="body" name="body" class="form-control"></textarea>
+            <script> $('#body').summernote({
+              placeholder: 'Write body Here', tabsize: 2,
+              height: 200 });
+              </script>
+            </div> </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                <label>Image</label>
+                <input type="file" class="form-control" id="image"
+                name="image">
+                </div> </div>
+            <br>
+            <div class="form-group">
+            <div class = "createnewbtn"><button type="submit" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2 " id="sendMessageButton">Create</button></div>
+            </div> </form>
+            </div> </div>
+            </div>
+
+
+
+<%- include('../includes/footer.ejs') %>  

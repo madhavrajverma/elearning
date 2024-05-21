@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>   
+<%- include('../includes/navigation.ejs') %>
+
+<div class="blog-view-container"> 
+    <div class="blog-img-contianer">
+        <img src="<%= blogpost.image %>" alt="">
+    </div>
+    <h2 class="blog-title"><%= blogpost.title %></h2>
+    <div class="blog-detail-container">
+        <div><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1711121599436/kryJ94JZ8.JPG?w=200&h=200&fit=crop&crop=faces&auto=compress,format&format=webp" alt=""></div>
+        <div><b>Prateek Khose</b></div>
+        <div><span><%= blogpost.datePosted.toDateString() %></span></div>
+        <div class="reader-icon-container">
+            <i class="fa-solid fa-book-open-reader icon1"></i>
+             <span>2 min read</span>
+        </div>
+    </div>
+    <div class="blog-body-container">
+        <p class="blog-body">
+            <%- blogpost.body %>
+        </p>
+    </div>
+
+</div>
+
+
+<%- include('../includes/footer.ejs') %>  

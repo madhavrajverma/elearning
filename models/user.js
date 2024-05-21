@@ -10,6 +10,14 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  role: { // added new attribute to distinguish between teacher and student and admin 
+    type: String,
+    enum : {
+      values : ['user', 'admin','writer'],
+      message : 'Please select correct role'
+  },
+    default: 'user',
+  },
   password: {
     type: String,
     required: true

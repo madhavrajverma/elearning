@@ -11,7 +11,9 @@ router.get('/courses',shopController.getCourse)
 router.get('/about',shopController.getAbout)
 router.get('/contact',shopController.getContact)
 router.get('/teachers',shopController.getTeachers);
-router.get('/blogs',shopController.getBlogs);
+
+// router.get('/blogs',shopController.getBlogs);// it belong to previously here
+
 router.post('/postQuery',shopController.postQuery);
 
 router.get("/courseDetail/:courseId",shopController.getCourseDetail);
